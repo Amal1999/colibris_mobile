@@ -1,11 +1,15 @@
 import 'package:colibris_mobile/widgets/ProfileWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:colibris_mobile/Services/ProfileService.dart';
 import 'package:colibris_mobile/models/user.dart';
 import 'package:colibris_mobile/widgets/TextFieldWidget.dart';
 class CreateProfile extends StatelessWidget {
    TextEditingController username =TextEditingController();
   TextEditingController email =TextEditingController();
-    TextEditingController phone =TextEditingController();
+    TextEditingController phone1 =TextEditingController();
+        TextEditingController phone2 =TextEditingController();
+
         TextEditingController password =TextEditingController();
                 TextEditingController date =TextEditingController();
 
@@ -60,12 +64,30 @@ class CreateProfile extends StatelessWidget {
               ),
                TextFieldWidget(name:"Nom et Prénom ",controller: username,hint: "Entrer votre nom et prénom",),
               TextFieldWidget(name:"Email",controller: email,hint:"Exemple : username@email.com "),
-              TextFieldWidget(name:"Numero de Telephone ",controller: phone ,hint:"Exemple : 00000000 "),
+              TextFieldWidget(name:"Numero de Telephone 1 ",controller: phone1 ,hint:"Exemple : 00000000 "),
+               TextFieldWidget(name:"Numero de Telephone 2 ",controller: phone2 ,hint:"Exemple : 00000000 "),
+
               TextFieldWidget(name:"Mot de passe ",controller: password ,hint:"********* ",inputType: TextInputType.visiblePassword,
                   obscureText: true,),
               TextFieldWidget(name:"Date de naissance ",controller: date ,hint:"JJ/MM/AAAA "),
                SizedBox(height: 20),
-               FloatingActionButton.extended(onPressed: () {},
+               FloatingActionButton.extended(onPressed: () async {
+                    Map<String,dynamic> user={
+                      "username":username.text,
+                      "email":email.text,
+                      "phone1":phone1.text,
+                      "phone2":phone2.text,
+
+                     // "userid":'${userid}'
+                    };
+                    ProfileService().AddProfile(user).then((value) {
+                      if(value)
+                        {
+                        //  Navigator.of(context).push();
+                        }
+                    });
+
+                  },
               backgroundColor: Colors.green,
               icon :Icon(Icons.add) ,
               label: Text("Creer"),
