@@ -7,8 +7,9 @@ class TextFieldWidget extends StatelessWidget {
   TextEditingController? controller;
   bool obscureText;
     TextInputType inputType;
+    FormFieldValidator validator;
 
-  TextFieldWidget({this.obscureText=false,this.name="",this.controller ,required this.hint,this.inputType=TextInputType.text});
+  TextFieldWidget({this.obscureText=false,this.name="",this.controller ,required this.hint,this.inputType=TextInputType.text,required this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +61,10 @@ class TextFieldWidget extends StatelessWidget {
                 borderSide:
                 const BorderSide(color: Colors.white38),
               ),
-              //fillColor: Colors.green
-
+      
             ),
              keyboardType: inputType,
-
+validator: validator,
           ),
         ),
       ],

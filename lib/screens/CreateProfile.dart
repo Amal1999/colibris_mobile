@@ -1,19 +1,25 @@
-import 'package:colibris_mobile/widgets/ProfileWidget.dart';
+import 'package:colibris_mobile/widgets/CreateProfileWidget.dart';
+import 'package:colibris_mobile/widgets/MycustomForm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:colibris_mobile/Services/ProfileService.dart';
+  import 'package:image_picker/image_picker.dart';
 import 'package:colibris_mobile/models/user.dart';
 import 'package:colibris_mobile/widgets/TextFieldWidget.dart';
-class CreateProfile extends StatelessWidget {
-   TextEditingController username =TextEditingController();
-  TextEditingController email =TextEditingController();
-    TextEditingController phone1 =TextEditingController();
-        TextEditingController phone2 =TextEditingController();
+ 
+ class CreateProfile extends StatefulWidget {
+     CreateProfile({Key? key}) : super(key: key);
+_CreateProfileState createState() => _CreateProfileState();
+   }
 
-        TextEditingController password =TextEditingController();
-                TextEditingController date =TextEditingController();
+      class _CreateProfileState extends State<CreateProfile>{ 
+        
+            final _formKey = GlobalKey<FormState>();
+                
+               late PickedFile imageFile;
+     ImagePicker _picker = ImagePicker();
+      //  final String imagePath="assets/userprofile.jpg";
 
-   CreateProfile({Key? key}) : super(key: key);
+
    Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -23,8 +29,7 @@ class CreateProfile extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Color.fromARGB(255, 19, 129, 87), Color.fromARGB(255, 31, 167, 87),]
-            //begin: Alignment.topLeft,
-            //end: Alignment.bottomRight,
+         
           ),
         ),
         child: SingleChildScrollView(
@@ -50,7 +55,7 @@ class CreateProfile extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              ProfileWidget(),
+              imageProfile( context),
               SizedBox(height: 20),
              
                SizedBox(height: 20),
@@ -62,45 +67,15 @@ class CreateProfile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-               TextFieldWidget(name:"Nom et Prénom ",controller: username,hint: "Entrer votre nom et prénom",),
-              TextFieldWidget(name:"Email",controller: email,hint:"Exemple : username@email.com "),
-              TextFieldWidget(name:"Numero de Telephone 1 ",controller: phone1 ,hint:"Exemple : 00000000 "),
-               TextFieldWidget(name:"Numero de Telephone 2 ",controller: phone2 ,hint:"Exemple : 00000000 "),
+              SizedBox(height: 20,),
+              FormValidationExample(),
 
-              TextFieldWidget(name:"Mot de passe ",controller: password ,hint:"********* ",inputType: TextInputType.visiblePassword,
-                  obscureText: true,),
-              TextFieldWidget(name:"Date de naissance ",controller: date ,hint:"JJ/MM/AAAA "),
-               SizedBox(height: 20),
-               FloatingActionButton.extended(onPressed: () async {
-                    Map<String,dynamic> user={
-                      "username":username.text,
-                      "email":email.text,
-                      "phone1":phone1.text,
-                      "phone2":phone2.text,
-
-                     // "userid":'${userid}'
-                    };
-                    ProfileService().AddProfile(user).then((value) {
-                      if(value)
-                        {
-                        //  Navigator.of(context).push();
-                        }
-                    });
-
-                  },
-              backgroundColor: Colors.green,
-              icon :Icon(Icons.add) ,
-              label: Text("Creer"),
-              
-              
-              ),
-               SizedBox(height: 20),
-            
-
-
-            ]
-        ),)
-      ),
-    ));
+              ]
+          ),
+  
+              ))
+          
+      )
+    )
+            ;
    }}
-   

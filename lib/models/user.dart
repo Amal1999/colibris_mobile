@@ -8,7 +8,7 @@ class User {
 
 
   int ?userid;
-  String ?avatar;
+  String ?avatar="assets/userprofile.jpg";
   String ?username;
   String ?email;
   String ?phone1;

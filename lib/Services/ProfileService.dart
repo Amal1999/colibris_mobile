@@ -5,11 +5,11 @@ import 'package:colibris_mobile/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileService { 
-   Future<bool> AddProfile (Map<String,dynamic> task) async{
+   Future<bool> AddProfile (Map<String,dynamic> user) async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     var response = await http.post(
       Uri.parse("http://10.0.2.2:3000/user"),
-      body: task
+      body: user
     );
     return(response.statusCode==201);
   }
