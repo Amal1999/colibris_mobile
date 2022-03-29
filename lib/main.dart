@@ -1,6 +1,6 @@
-import 'package:colibris_mobile/widgets/MycustomForm.dart';
+
 import 'package:flutter/material.dart';
-import 'package:colibris_mobile/screens/CreateProfile.dart';
+import 'package:colibris_mobile/screens/LoginProfile.dart';
 
 
 void main() {
@@ -13,6 +13,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+
+  
   @override
 
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: CreateProfile(),
+      home: LoginPage(),
 
     );
   }
