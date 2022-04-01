@@ -1,8 +1,6 @@
 
-import 'package:colibris_mobile/widgets/textBox.dart';
+import 'package:colibris_mobile/widgets/PhoneText.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:colibris_mobile/widgets/TextFieldWidget.dart';
  
  class LoginPage extends StatefulWidget {
   @override
@@ -10,6 +8,8 @@ import 'package:colibris_mobile/widgets/TextFieldWidget.dart';
 }
 
 class _LoginPageState extends State<LoginPage> {
+  var child;
+
         
    Widget build(BuildContext context) {
          final topPadding = MediaQuery.of(context).padding.top;
@@ -32,12 +32,9 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: topPadding),
-          
-                 
                 
-              
               SizedBox(height: 20),
-               Image.asset("assets/colibris.jpg",
+               Image.asset("assets/colibris.png",
                width: 130,),
               SizedBox(height: 20),
              
@@ -58,16 +55,71 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 40,),
+              SizedBox(height: 60,),
               const Text("Using phone number", style: TextStyle(
                   fontSize: 15,
                   color: Color.fromARGB(255, 112, 109, 109),
                   fontWeight: FontWeight.bold,
                 ),
               ),
+               SizedBox(height: 20,),
+
+
+   Row(    
+
+              mainAxisAlignment: MainAxisAlignment.center,
+
+    children: [
+  
+          FormValidationExample(),
+         SizedBox(height:20),
+         Icon(Icons.arrow_forward)],
+            
+  ),
+          SizedBox(width: 20,),
+               const Text("Using Facebook", style: TextStyle(
+                  fontSize: 15,
+                  color: Color.fromARGB(255, 112, 109, 109),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+                            SizedBox(height: 20),
+
+              ElevatedButton(
+  onPressed: () {},  style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              textStyle: const TextStyle(fontSize: 20),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0))
+            ),
+        
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Text('Login using Facebook',),
+      // <-- Text
+      SizedBox(
+        width: 20,
+      ),
+      Icon( // <-- Icon
+        Icons.facebook,
+        size: 24.0,
+      ),
+    ],
+  ),
+),
                             SizedBox(height: 40,),
 
-              PhoneText(),
+Text("You don't have an account?", style: TextStyle(
+                  fontSize: 15,
+                  color: Color.fromARGB(255, 8, 0, 0)        ,          fontWeight: FontWeight.bold,
+                ),
+              ),
+                            SizedBox(height: 10,),
+
+                 TextButton (onPressed: () {},
+                    child: Text("Create account",style:TextStyle(color:Color.fromARGB(255, 56, 165, 110),decoration: TextDecoration.underline, ),
+ ),),
               ])
               ))));
        
