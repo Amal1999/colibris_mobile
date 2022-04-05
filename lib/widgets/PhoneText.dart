@@ -40,11 +40,11 @@ class _FormValidationExampleState extends State<FormValidationExample> {
                          width: 250,
 
                        child: TextFormField(
-                         
+                        
                          controller: phone1,
                         decoration: InputDecoration(
                           hintText: "Enter your phone number ",
-                          fillColor: Colors.white38,
+                          fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.0),
@@ -52,7 +52,7 @@ class _FormValidationExampleState extends State<FormValidationExample> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.0),
                   borderSide:
-                  const BorderSide(color: Colors.white38),
+                  const BorderSide(color: Colors.white),
                 ),
                         ),
                         validator: (phone1) {

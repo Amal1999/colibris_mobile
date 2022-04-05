@@ -72,10 +72,19 @@ class _LoginPageState extends State<LoginPage> {
     children: [
   
           FormValidationExample(),
-         SizedBox(height:20),
-         Icon(Icons.arrow_forward)],
-            
+         SizedBox(height:10),
+         Align(alignment:Alignment(5,6) ,
+child :ClipOval(
+  child: Material(
+    color: Colors.green, // button color
+    child: InkWell(
+      splashColor: Colors.green, // Couleur qui "envahit" le bouton lors du focus
+      child: SizedBox(width: 40, height: 40, child: Icon(Icons.navigate_next,color: Colors.white,)),
+      onTap: () {},
+    ),)
   ),
+)
+    ]),
           SizedBox(width: 20,),
                const Text("Using Facebook", style: TextStyle(
                   fontSize: 15,
@@ -87,6 +96,7 @@ class _LoginPageState extends State<LoginPage> {
 
               ElevatedButton(
   onPressed: () {},  style: ElevatedButton.styleFrom(
+     primary: Color.fromARGB(255, 30, 116, 187),
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               textStyle: const TextStyle(fontSize: 20),
               shape: RoundedRectangleBorder(
