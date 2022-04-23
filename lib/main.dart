@@ -3,7 +3,7 @@
 import 'package:colibris_mobile/settings/const.dart';
 import 'package:colibris_mobile/ui/screens/home.dart';
 import 'package:flutter/material.dart';
-import 'package:colibris_mobile/screens/LoginProfile.dart';
+import 'ui/screens/login_profile/LoginProfile.dart';
 
 
 void main() {

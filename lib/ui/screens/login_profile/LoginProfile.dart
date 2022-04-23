@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: topPadding),
                 
               SizedBox(height: 20),
-               Image.asset("assets/colibris.png",
+               Image.asset("assets/images/colibris.png",
                width: 130,),
               SizedBox(height: 20),
                SizedBox(height: 20),
