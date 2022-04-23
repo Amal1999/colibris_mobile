@@ -39,7 +39,6 @@ class _LoginPageState extends State<LoginPage> {
                Image.asset("assets/colibris.png",
                width: 130,),
               SizedBox(height: 20),
-             
                SizedBox(height: 20),
                const Text(
                 "Login and request",
@@ -65,8 +64,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
                SizedBox(height: 20,),
-
-
    Row(    
 
               mainAxisAlignment: MainAxisAlignment.center,
