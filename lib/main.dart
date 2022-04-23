@@ -3,6 +3,7 @@
 import 'package:colibris_mobile/settings/const.dart';
 import 'package:colibris_mobile/ui/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:colibris_mobile/screens/LoginProfile.dart';
 
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
+        "/home" : (context) => HomeScreen(),
       },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home: HomeScreen(),
+      home: LoginPage(),
     );
   }
 }
