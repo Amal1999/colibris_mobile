@@ -1,10 +1,14 @@
-// ignore_for_file: prefer_final_fields, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_final_fields, prefer_const_constructors
+
+import 'package:colibris_mobile/ui/screens/pickup_request/pickup_request.dart';
 import 'package:flutter/material.dart';
 import 'package:colibris_mobile/ui/screens/profile/profile.dart';
 import 'package:colibris_mobile/settings/config.dart';
 import 'package:colibris_mobile/settings/const.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -15,9 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Text("first"),
     ),
     Profile(),
-    Center(
-      child: Text("last"),
-    )
+    PickupRequest()
   ];
   int _currentIndex = 1;
 
