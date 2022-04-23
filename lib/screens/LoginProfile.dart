@@ -13,6 +13,8 @@ class _LoginPageState extends State<LoginPage> {
         
    Widget build(BuildContext context) {
          final topPadding = MediaQuery.of(context).padding.top;
+           final formGlobalKey = GlobalKey < FormState > ();
+
 
     return SafeArea(
       child: Scaffold(
@@ -55,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 60,),
+              SizedBox(height: 50,),
               const Text("Using phone number", style: TextStyle(
                   fontSize: 15,
                   color: Color.fromARGB(255, 112, 109, 109),
@@ -73,17 +75,8 @@ class _LoginPageState extends State<LoginPage> {
   
           FormValidationExample(),
          SizedBox(height:10),
-         Align(alignment:Alignment(5,6) ,
-child :ClipOval(
-  child: Material(
-    color: Colors.green, // button color
-    child: InkWell(
-      splashColor: Colors.green, // Couleur qui "envahit" le bouton lors du focus
-      child: SizedBox(width: 40, height: 40, child: Icon(Icons.navigate_next,color: Colors.white,)),
-      onTap: () {},
-    ),)
-  ),
-)
+        
+
     ]),
           SizedBox(width: 20,),
                const Text("Using Facebook", style: TextStyle(
@@ -94,13 +87,14 @@ child :ClipOval(
               ),
                             SizedBox(height: 20),
 
-              ElevatedButton(
-  onPressed: () {},  style: ElevatedButton.styleFrom(
+             ElevatedButton(
+  onPressed: () {
+  },  style: ElevatedButton.styleFrom(
      primary: Color.fromARGB(255, 30, 116, 187),
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               textStyle: const TextStyle(fontSize: 20),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(0))
+                  borderRadius: BorderRadius.circular(30))
             ),
         
   child: Row(

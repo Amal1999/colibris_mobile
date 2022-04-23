@@ -17,10 +17,9 @@ class FormValidationExample extends StatefulWidget  {
   @override
   State<FormValidationExample> createState() => _FormValidationExampleState();
 
-  final formGlobalKey = GlobalKey < FormState > ();
    }
 class _FormValidationExampleState extends State<FormValidationExample> {
-  late Map<String, dynamic> user;
+  final formGlobalKey = GlobalKey < FormState > ();
 
  // get formGlobalKey => null;
 
@@ -29,7 +28,7 @@ class _FormValidationExampleState extends State<FormValidationExample> {
 
   @override
   Widget build(BuildContext context) {
-  final formGlobalKey = GlobalKey < FormState > ();
+  
     return 
       Form(
             key: formGlobalKey,
@@ -43,6 +42,19 @@ class _FormValidationExampleState extends State<FormValidationExample> {
                         
                          controller: phone1,
                         decoration: InputDecoration(
+                          suffixIcon: Padding(
+  padding: const EdgeInsetsDirectional.only(end: 12.0),
+  child: ClipOval(
+  child: Material(
+    color: Colors.green, // button color
+    child: InkWell(
+      splashColor: Colors.green, // Couleur qui "envahit" le bouton lors du focus
+      child: SizedBox(width: 40, height: 40, child: Icon(Icons.navigate_next,color: Colors.white,)),
+      onTap: () { if (formGlobalKey.currentState!.validate()) {
+                              formGlobalKey.currentState!.save();}},
+    ),)
+  ), // myIcon is a 48px-wide widget.
+),
                           hintText: "Enter your phone number ",
                           fillColor: Colors.white,
                 filled: true,
