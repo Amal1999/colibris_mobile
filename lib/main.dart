@@ -1,4 +1,9 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_const, prefer_const_constructors
+
+import 'package:colibris_mobile/settings/const.dart';
+import 'package:colibris_mobile/ui/screens/home.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+      },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -24,10 +31,15 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Const.kToDark,
+        bottomAppBarColor: Const.kToDark,
+
+
       ),
-      home: Container(),
+      home: HomeScreen(),
     );
   }
 }
+
+
 
