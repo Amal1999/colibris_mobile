@@ -2,6 +2,7 @@
 
 import 'package:colibris_mobile/settings/const.dart';
 import 'package:colibris_mobile/ui/screens/home.dart';
+import 'package:colibris_mobile/ui/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'ui/screens/login_profile/LoginProfile.dart';
 
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home: LoginPage(),
+      home: sign_up(),
     );
   }
 }
