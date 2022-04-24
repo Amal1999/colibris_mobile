@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_const, prefer_const_constructors
 
 import 'package:colibris_mobile/settings/const.dart';
+import 'package:colibris_mobile/ui/screens/getStarted/getStarted.dart';
 import 'package:colibris_mobile/ui/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home: HomeScreen(),
+      home: getStarted(),
     );
   }
 }
